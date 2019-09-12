@@ -14,10 +14,8 @@ temp=read_csv(dataurl,
 # renaming is necessary becuase they used dashes ("-")
 # in the column names and R doesn't like that.
 
-title = paste0("Mean Summer Temperature in Buffalo, NY (1880-2018)")
-subtitle= paste0("Summer includes Jun, July, and August","\n",
-                 "Data from the Global Historical Climate Network", "\n",
-                  "Red line is a LOESS smooth")
+title = "Mean Summer Temperature in Buffalo, NY (1880-2018)"
+subtitle= "Summer includes Jun, July, and August \nData from the Global Historical Climate Network \nRed line is a LOESS smooth"
 
 ggplot(temp,aes(x=YEAR,y=JJA))+
   geom_line()+
@@ -25,10 +23,6 @@ ggplot(temp,aes(x=YEAR,y=JJA))+
   xlab("Year")+
   ylab("Mean Summer Temperature(C)")+
   ggtitle(title, subtitle)
+
 ggsave("Graph.png")
-
-#png(filename = "Graph1.png")
-#plot ...
-#dev.off()
-
 
