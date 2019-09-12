@@ -1,7 +1,5 @@
 library(dplyr)
 data(iris)
-#petal_length <- iris[,3]
-#mean(iris$Petal.Length)
 petal_length <- iris$Petal.Length
 mean_petal_length <- mean(petal_length)
 histogram_petal_length <- hist(petal_length,
