@@ -2,9 +2,11 @@ library(ggplot2)
 library(gapminder)
 library(dplyr)
 
+# First dataset
 dataSet_1 <- gapminder %>%
   filter(country != "Kuwait")
 
+#First Plot
 ggplot(dataSet_1, aes(lifeExp, gdpPercap, size = pop/100000, color = continent))+ 
   geom_point()+
   facet_wrap(~year,nrow=1)+
@@ -19,10 +21,12 @@ ggplot(dataSet_1, aes(lifeExp, gdpPercap, size = pop/100000, color = continent))
   
 ggsave("firstPart.png", width=15)
 
+# Second dataset
 dataSet_2 <- dataSet_1 %>%
   group_by(continent, year) %>%
-  summarise(gdpPercapweighted = weighted.mean(x = gdpPercap, w = pop),pop = sum(as.numeric(pop)))
+  summarize(gdpPercapweighted = weighted.mean(x = gdpPercap, w = pop),pop = sum(as.numeric(pop)))
   
+#Second Plot
 ggplot(dataSet_1,aes(year, gdpPercap, color=continent))+
   geom_line(aes(group=country))+
   geom_point()+
@@ -35,7 +39,7 @@ ggplot(dataSet_1,aes(year, gdpPercap, color=continent))+
   labs(title = "Wealth and life expectancy through time")+
   labs(size="Population(100K)", col="Continent")+
   theme(axis.text.x = element_text(size=5))+
-  scale_size_continuous(range=c(1,2))+
+  scale_size_continuous(range=c(1,5))+
   guides(size= guide_legend(order=1), color= guide_legend(order=2))
 
 ggsave("secondPart.png", width=15)
