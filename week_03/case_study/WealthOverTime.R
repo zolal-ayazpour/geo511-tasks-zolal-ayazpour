@@ -6,7 +6,7 @@ library(dplyr)
 dataSet_1 <- gapminder %>%
   filter(country != "Kuwait")
 
-#First Plot
+#First plot
 ggplot(dataSet_1, aes(lifeExp, gdpPercap, size = pop/100000, color = continent))+ 
   geom_point()+
   facet_wrap(~year,nrow=1)+
@@ -26,7 +26,7 @@ dataSet_2 <- dataSet_1 %>%
   group_by(continent, year) %>%
   summarize(gdpPercapweighted = weighted.mean(x = gdpPercap, w = pop),pop = sum(as.numeric(pop)))
   
-#Second Plot
+#Second plot
 ggplot(dataSet_1,aes(year, gdpPercap, color=continent))+
   geom_line(aes(group=country))+
   geom_point()+
