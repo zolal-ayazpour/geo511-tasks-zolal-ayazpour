@@ -3,6 +3,7 @@ library(tidyverse)
 # define the link to the data - you can try this in your browser too
 dataurl="https://raw.githubusercontent.com/AdamWilsonLab/SpatialDataScience/master/docs/02_assets/buffaloweather.csv"
 
+# Read the data
 temp=read_csv(dataurl,
               skip=1, #skip the first line which has column names
               na="999.90", # tell R that 999.90 means missing in this dataset
@@ -14,6 +15,7 @@ temp=read_csv(dataurl,
 # renaming is necessary becuase they used dashes ("-")
 # in the column names and R doesn't like that.
 
+# Plotting the data
 title = "Mean Summer Temperature in Buffalo, NY (1880-2018)"
 subtitle= "Summer includes Jun, July, and August \nData from the Global Historical Climate Network \nRed line is a LOESS smooth"
 
