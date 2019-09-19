@@ -16,7 +16,7 @@ farthest_airport_solution_1 <- flights %>%
 
 View(farthest_airport_solution_1)
 
-# second solution:
+# second solution
 
 farthest_airport_solution_2 <- flights %>%
   arrange(desc(distance)) %>% 
