@@ -1,15 +1,15 @@
 library(dplyr)
 
-#Read iris data
+# Read iris data
 data(iris)
 
-#Petal length data
+# Petal length data
 petal_length <- iris$Petal.Length
 
-#Mean
+# Mean
 mean_petal_length <- mean(petal_length)
 
-#Histogram
+# Histogram
 histogram_petal_length <- hist(petal_length,
                                main="Histogram of Petal Length",
                                xlab="Petal Length",
@@ -18,6 +18,6 @@ histogram_petal_length <- hist(petal_length,
                                las=1,
                                breaks=11)
 
-#Statistical calculations
+# Statistical calculations
 iris$Petal.Length %>%
   summary()
