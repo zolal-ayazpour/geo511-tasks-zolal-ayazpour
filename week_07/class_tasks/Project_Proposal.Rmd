@@ -17,6 +17,7 @@ One of the models is called High Resolution Rapid Refresh (HRRR) which is a fore
 
 The main reason for choosing these two models is that one of them has a significantly higher resolution and, on the other hand, the other is supposedly based on a more powerful model.
 
+
 ## Inspiring Examples
 
 Following gif and image are provided to demonstrate the idea of this project and the way that authors will communicate with audience, which is basically making a comparison between different models.
