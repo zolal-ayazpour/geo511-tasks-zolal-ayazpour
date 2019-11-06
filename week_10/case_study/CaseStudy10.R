@@ -156,6 +156,6 @@ lcds1=cbind.data.frame(
 
 ggplot(lcds1,aes(month,value))+
   geom_jitter(alpha=0.2,width=0.3)+
-  geom_
+  geom_violin(col="red")+
   facet_wrap(~landcover)
 
