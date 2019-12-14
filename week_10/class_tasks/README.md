@@ -1,1 +1,3 @@
- 
+We used land cover and surface temperature data from MODIS in the case study of this week. We assigned colors to each specific land cover type and plotted both land surface temperature and land cover over the case study area. We also used extract(lst,lw,buffer=1000,fun=mean,na.rm=T) from raster package to plot a timeseries from average surface temperature at a spatial point. resample() function was also very useful in this case study which enables us to project both rasters on the same grids so that we can compare land surface temperature for different land covers. Function cellStats(lst_month,mean) also helped us to calculate the monthly mean for the entire area.
+
+packages for this week case study: raster, rasterVis, rgdal, ggmap, tidyverse, knitr and netcdf4
